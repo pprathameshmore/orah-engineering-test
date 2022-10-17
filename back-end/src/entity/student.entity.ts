@@ -1,5 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm"
 import { CreateStudentInput, UpdateStudentInput } from "../interface/student.interface"
+import { GroupStudent } from "./group-student.entity"
+import { StudentRollState } from "./student-roll-state.entity"
 
 @Entity()
 export class Student {

@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm"
 import { CreateRollInput, UpdateRollInput } from "../interface/roll.interface"
+import { StudentRollState } from "./student-roll-state.entity"
 
 @Entity()
 export class Roll {
@@ -11,7 +12,7 @@ export class Roll {
 
   @Column()
   completed_at: Date
-
+  
   public prepareToCreate(input: CreateRollInput) {
     this.name = input.name
     if (input.completed_at !== undefined) this.completed_at = input.completed_at

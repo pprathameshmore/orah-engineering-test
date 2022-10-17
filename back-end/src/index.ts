@@ -6,6 +6,7 @@ import * as cors from "cors"
 import { Request, Response } from "express"
 import { Routes } from "./routes"
 import { Student } from "./entity/student.entity"
+import { GroupStudent } from "./entity/group-student.entity"
 
 createConnection()
   .then(async (connection) => {
@@ -140,6 +141,27 @@ createConnection()
           })
         )
       }
+      // await connection.manager.save(
+      //   connection.manager.create(GroupStudent, {
+      //     student_id: 1,
+      //     group_id: 17,
+      //     incident_count: 0,
+      //   })
+      // )
+      // await connection.manager.save(
+      //   connection.manager.create(GroupStudent, {
+      //     student_id: 1,
+      //     group_id: 38,
+      //     incident_count: 1,
+      //   })
+      // )
+      // await connection.manager.save(
+      //   connection.manager.create(GroupStudent, {
+      //     student_id: 6,
+      //     group_id: 17,
+      //     incident_count: 1,
+      //   })
+      // )
     })
 
     console.log("Express server has started on port 4001. Open http://localhost:4001/student/get-all to see results")
